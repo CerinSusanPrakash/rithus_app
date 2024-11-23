@@ -75,8 +75,8 @@ const ProductPage = () => {
     formData.append('orderPhoneNumber', orderPhoneNumber);
     formData.append('orderQuantity', orderQuantity);
     formData.append('upiTransactionId', upiTransactionId);
-    formData.append('paymentImage', paymentImage);
-    // formData.append('paymentImage', file);
+    // formData.append('paymentImage', paymentImage);
+    formData.append('paymentImage', file);
     formData.append('productName', product?.productName); // Adding product name to the formData
 
     // Optionally, you can also pass product ID or other product details if necessary
