@@ -8,7 +8,7 @@ const Viewprod = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('https://rithusnightyworldofficial.vercel.app/getproducts')
+    axios.get('https://rithus-app-api.vercel.app/getproducts')
       .then((res) => {
         console.log(res);
         setData(res.data);
@@ -72,7 +72,7 @@ const Viewprod = () => {
                 /> */}
                 <CardMedia
   sx={{ height: 200 }}
-  image={`https://rithusnightyworldofficial.vercel.app/${item.productImage}`} // Dynamically set the image URL
+  image={`https://rithus-app-api.vercel.app/${item.productImage}`} // Dynamically set the image URL
   title={item.productName || "Product Image"}
   component="img" // Use CardMedia as an img component for better fallback support
   alt={item.productName || "Product Image"}
