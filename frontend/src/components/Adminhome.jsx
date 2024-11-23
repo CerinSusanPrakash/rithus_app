@@ -49,7 +49,7 @@ const Adminhome = () => {
 
   // Function to fetch products
   const fetchProducts = () => {
-    axios.get('http://localhost:4000/getproducts')
+    axios.get('https://rithusnightyworldofficial.vercel.app/getproducts')
       .then((res) => {
         setProducts(res.data);
       })
@@ -162,7 +162,7 @@ const Adminhome = () => {
 
     if (editMode) {
         // Update existing product
-        axios.put(`http://localhost:4000/editproduct/${editingProductId}`, formData, {
+        axios.put(`https://rithusnightyworldofficial.vercel.app/editproduct/${editingProductId}`, formData, {
             headers: { 'Content-Type': 'multipart/form-data' }
         })
             .then((res) => {
@@ -177,7 +177,7 @@ const Adminhome = () => {
             });
     } else {
         // Add new product
-        axios.post('http://localhost:4000/addproduct', formData, {
+        axios.post('https://rithusnightyworldofficial.vercel.app/addproduct', formData, {
             headers: { 'Content-Type': 'multipart/form-data' }
         })
             .then((res) => {
@@ -196,7 +196,7 @@ const Adminhome = () => {
 
   // Function to delete a product
   const handleDelete = (id) => {
-    axios.delete('http://localhost:4000/deleteproduct/' + id)
+    axios.delete('https://rithusnightyworldofficial.vercel.app/deleteproduct/' + id)
       .then((res) => {
         alert('Product Deleted');
         fetchProducts(); // Refresh product list
@@ -393,7 +393,7 @@ const Adminhome = () => {
               <Card>
               <CardMedia
   sx={{ height: 200 }}
-  image={`http://localhost:4000/${product.productImage}`} // Dynamically set the image URL
+  image={`https://rithusnightyworldofficial.vercel.app/${product.productImage}`} // Dynamically set the image URL
   title={product.productName || "Product Image"}
   component="img" // Use CardMedia as an img component for better fallback support
   alt={product.productName || "Product Image"}
@@ -405,7 +405,7 @@ const Adminhome = () => {
                   image={product.productImage}
                   title={product.productName}
                 /> */}
-                {/* <img src={`http://localhost:4000/${product.productImage}`} alt={product.productImage} style={{ width: '200px' }} /> */}
+                {/* <img src={`https://rithusnightyworldofficial.vercel.app/${product.productImage}`} alt={product.productImage} style={{ width: '200px' }} /> */}
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
                     {product.productName}
