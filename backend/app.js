@@ -11,7 +11,7 @@ app.use(express.json());
 // app.use(cors());
 // Middleware
 app.use(cors({
-    origin: ["https://rithusnightyworldofficial.vercel.app","https://rithusnightyworldofficial.vercel.app/products"], // Add all allowed origins
+    origin: ["https://rithusnightyworldofficial.vercel.app","https://rithusnightyworldofficial.vercel.app/products","https://rithusnightyworldofficial.vercel.app/buyproduct"], // Add all allowed origins
     methods: ["GET", "DELETE", "POST", "PUT"],
     credentials: true,
 }));
