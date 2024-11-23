@@ -21,6 +21,11 @@ app.use(express.json()); // Parse incoming JSON requests
 app.get("/", (req, res) => {
     res.json({ message: "Backend is working" });
 });
+const fs = require('fs');
+const uploadDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir);
+}
 
 
 
