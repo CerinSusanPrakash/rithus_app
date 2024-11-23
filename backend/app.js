@@ -8,7 +8,22 @@ const path = require('path');
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
+// Middleware
+app.use(cors({
+    origin: ["https://book-my-show-frt.vercel.app/add","https://book-my-show-frt.vercel.app"], // Add all allowed origins
+    methods: ["GET", "DELETE", "POST", "PUT"],
+    credentials: true,
+}));
+app.use(express.json()); // Parse incoming JSON requests
+
+// Default Route
+app.get("/", (req, res) => {
+    res.json({ message: "Backend is working" });
+});
+
+
+
 
 // Static file serving for images
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
