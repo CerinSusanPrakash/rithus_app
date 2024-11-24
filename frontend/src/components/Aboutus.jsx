@@ -246,7 +246,11 @@ const AboutUs = () => {
       <Grid container spacing={4} alignItems="center" style={{ marginTop: '50px', textAlign: 'center' }}>
         <Grid item xs={12}>
           <Typography variant="h4" gutterBottom>Login (Admin)</Typography>
-          
+          <Button sx={{ color: '#5B3A29', fontWeight: 'bold', fontFamily: '"Arial", "Helvetica", "sans-serif"' }}>
+            <Link to={'/adminlogin'} style={{textDecoration:"none" ,color:'#5B3A29', fontWeight: 'bold', fontFamily: '"Arial", "Helvetica", "sans-serif"'}}>
+              About
+            </Link>
+          </Button>
 
         </Grid>
       </Grid>
