@@ -271,15 +271,55 @@ const AboutUs = () => {
         </Grid>
       </Grid> */}
 
-      <Grid container spacing={4} alignItems="center" style={{ marginTop: '50px', textAlign: 'center' }}>
+    //   <Grid container spacing={4} alignItems="center" style={{ marginTop: '50px', textAlign: 'center' }}>
+    //   <Grid item xs={12}>
+    //     <Paper
+    //       elevation={4} // Elevation adds shadow
+    //       style={{
+    //         padding: '20px',
+    //         boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)', // Optional: Custom shadow
+    //         borderRadius: '8px',
+    //         backgroundColor: '#f9f9f9', // Light background for contrast
+    //       }}
+    //     >
+    //       <Typography variant="h4" gutterBottom>
+    //         Login (Admin)
+    //       </Typography>
+    //       <Button 
+    //         sx={{ 
+    //           color: '#5B3A29', 
+    //           fontWeight: 'bold', 
+    //           fontFamily: '"Arial", "Helvetica", "sans-serif"' 
+    //         }}
+    //       >
+    //         <Link 
+    //           to={'/admin'} 
+    //           style={{ 
+    //             textDecoration: "none", 
+    //             color: '#5B3A29', 
+    //             fontWeight: 'bold', 
+    //             fontFamily: '"Arial", "Helvetica", "sans-serif"' 
+    //           }}
+    //         >
+    //           About
+    //         </Link>
+    //       </Button>
+    //     </Paper>
+    //   </Grid>
+    // </Grid>
+
+             <Grid container spacing={4} alignItems="center" style={{ marginTop: '50px', textAlign: 'center' }}>
       <Grid item xs={12}>
         <Paper
           elevation={4} // Elevation adds shadow
           style={{
             padding: '20px',
-            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)', // Optional: Custom shadow
             borderRadius: '8px',
-            backgroundColor: '#f9f9f9', // Light background for contrast
+            backgroundImage: 'url(https://cdn.wallpapersafari.com/55/76/r80zjJ.png)', // Replace with your image URL
+            backgroundSize: 'cover', // Ensures the image covers the entire section
+            backgroundPosition: 'center', // Centers the image
+            color: '#fff', // White text for better contrast
+            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)', // Optional custom shadow
           }}
         >
           <Typography variant="h4" gutterBottom>
@@ -287,7 +327,7 @@ const AboutUs = () => {
           </Typography>
           <Button 
             sx={{ 
-              color: '#5B3A29', 
+              color: '#FFD700', // Golden color for a stylish look
               fontWeight: 'bold', 
               fontFamily: '"Arial", "Helvetica", "sans-serif"' 
             }}
@@ -296,7 +336,7 @@ const AboutUs = () => {
               to={'/admin'} 
               style={{ 
                 textDecoration: "none", 
-                color: '#5B3A29', 
+                color: '#FFD700', 
                 fontWeight: 'bold', 
                 fontFamily: '"Arial", "Helvetica", "sans-serif"' 
               }}
