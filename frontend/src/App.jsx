@@ -18,6 +18,7 @@ function App() {
   return (
     <>
     {/* <Dressimage/> */}
+      Hello
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
