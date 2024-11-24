@@ -236,6 +236,48 @@ const AboutUs = () => {
 
 
 
+      {/* Login (Admin) Section */}
+      <Grid
+        container
+        spacing={4}
+        alignItems="center"
+        style={{ marginTop: "50px", textAlign: "center" }}
+      >
+        <Grid item xs={12}>
+          <Paper
+            elevation={4}
+            style={{
+              padding: "20px",
+              borderRadius: "8px",
+              backgroundColor: "#f9f9f9",
+              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+            }}
+          >
+            <Typography variant="h4" gutterBottom>
+              Login (Admin)
+            </Typography>
+            <Button
+              sx={{
+                backgroundColor: "#FFFDD0",
+                color: "#5B3A29",
+                fontWeight: "bold",
+                "&:hover": { backgroundColor: "#f5e3a1" },
+              }}
+            >
+              <Link
+                to={"/admin"}
+                style={{
+                  textDecoration: "none",
+                  color: "#5B3A29",
+                  fontWeight: "bold",
+                }}
+              >
+                About
+              </Link>
+            </Button>
+          </Paper>
+        </Grid>
+      </Grid>
       
     </Container>
   );
