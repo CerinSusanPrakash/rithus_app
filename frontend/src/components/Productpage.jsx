@@ -83,7 +83,7 @@ const ProductPage = () => {
     formData.append('productId', product?._id);
 
     axios
-      .post('http://localhost:4000/addorder', formData, {
+      .post('https://rithus-app-api.vercel.app/addorder', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       })
       .then((res) => {
