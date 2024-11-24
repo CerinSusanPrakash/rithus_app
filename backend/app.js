@@ -16,7 +16,7 @@ app.use(express.json());
 // app.use(express.json());
 app.use(cors({
     origin: [
-        "https://rithusnightyworldofficial.vercel.app",
+        // "https://rithusnightyworldofficial.vercel.app",
         "https://rithusnightyworldofficial.vercel.app/products",
         "https://rithusnightyworldofficial.vercel.app/buyproduct"
     ],
