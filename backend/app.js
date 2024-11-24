@@ -40,15 +40,15 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // **Order Handling**
-// app.get('/getorders', async (req, res) => {
-//   try {
-//     const data = await orderModel.find();
-//     res.send(data);
-//   } catch (error) {
-//     console.log(error);
-//     res.status(500).send('Error fetching orders');
-//   }
-// });
+app.get('/getorders', async (req, res) => {
+  try {
+    const data = await orderModel.find();
+    res.send(data);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('Error fetching orders');
+  }
+});
 
 app.post('/addorder', upload.single('paymentImage'), async (req, res) => {
   try {
