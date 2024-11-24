@@ -8,7 +8,7 @@ const Viewprod = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('https://rithus-app-api.vercel.app/getproducts')
+    axios.get('https://rithus-app-backend.vercel.app/getproducts')
       .then((res) => {
         console.log(res);
         setData(res.data);
