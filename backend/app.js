@@ -182,7 +182,9 @@ app.use(express.json());
 // app.use(cors());
 // Middleware
 app.use(cors({
-    origin: ["https://rithusnightyworldofficial.vercel.app","https://rithusnightyworldofficial.vercel.app/products","https://rithusnightyworldofficial.vercel.app/buyproduct"], // Add all allowed origins
+    origin: ["https://rithusnightyworldofficial.vercel.app",
+             "https://rithusnightyworldofficial.vercel.app/products",
+             "https://rithusnightyworldofficial.vercel.app/buyproduct"], // Add all allowed origins
     methods: ["GET", "DELETE", "POST", "PUT"],
     credentials: true,
 }));
@@ -343,182 +345,182 @@ app.listen(4000, () => {
   console.log('Server is running on PORT 4000');
 });
 
-const express = require('express');
-require('./connection');
-const productModel = require('./models/Product');
-const orderModel = require('./models/Order');
-const multer = require('multer');
-const cors = require('cors');
-const path = require('path');
-const fs = require('fs');
+// const express = require('express');
+// require('./connection');
+// const productModel = require('./models/Product');
+// const orderModel = require('./models/Order');
+// const multer = require('multer');
+// const cors = require('cors');
+// const path = require('path');
+// const fs = require('fs');
 
-const app = express();
-const PORT = 4000;
+// const app = express();
+// const PORT = 4000;
 
-// Middleware
-app.use(express.json());
-app.use(cors({
-    origin: [
-        "https://rithusnightyworldofficial.vercel.app",
-        "https://rithusnightyworldofficial.vercel.app/products",
-        "https://rithusnightyworldofficial.vercel.app/buyproduct"
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-}));
+// // Middleware
+// app.use(express.json());
+// app.use(cors({
+//     origin: [
+//         "https://rithusnightyworldofficial.vercel.app",
+//         "https://rithusnightyworldofficial.vercel.app/products",
+//         "https://rithusnightyworldofficial.vercel.app/buyproduct"
+//     ],
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     credentials: true,
+// }));
 
-// Ensure the 'uploads' directory exists
-const uploadDir = path.join(__dirname, 'uploads');
-if (!fs.existsSync(uploadDir)) {
-    fs.mkdirSync(uploadDir);
-}
+// // Ensure the 'uploads' directory exists
+// const uploadDir = path.join(__dirname, 'uploads');
+// if (!fs.existsSync(uploadDir)) {
+//     fs.mkdirSync(uploadDir);
+// }
 
-// Static file serving for images
-app.use('/uploads', express.static(uploadDir));
+// // Static file serving for images
+// app.use('/uploads', express.static(uploadDir));
 
-// Multer setup for image uploads
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, uploadDir); // Store in 'uploads' folder
-    },
-    filename: (req, file, cb) => {
-        cb(null, `${Date.now()}-${file.originalname}`); // Unique filenames
-    },
-});
-const upload = multer({ storage });
+// // Multer setup for image uploads
+// const storage = multer.diskStorage({
+//     destination: (req, file, cb) => {
+//         cb(null, uploadDir); // Store in 'uploads' folder
+//     },
+//     filename: (req, file, cb) => {
+//         cb(null, `${Date.now()}-${file.originalname}`); // Unique filenames
+//     },
+// });
+// const upload = multer({ storage });
 
-// Default Route
-app.get("/", (req, res) => {
-    res.json({ message: "Backend is working" });
-});
+// // Default Route
+// app.get("/", (req, res) => {
+//     res.json({ message: "Backend is working" });
+// });
 
-// ** Order Routes **
-app.get('/getorders', async (req, res) => {
-    try {
-        const orders = await orderModel.find();
-        res.status(200).json(orders);
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Error fetching orders');
-    }
-});
+// // ** Order Routes **
+// app.get('/getorders', async (req, res) => {
+//     try {
+//         const orders = await orderModel.find();
+//         res.status(200).json(orders);
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).send('Error fetching orders');
+//     }
+// });
 
-app.post('/addorder', upload.single('paymentImage'), async (req, res) => {
-    try {
-        const { orderName, orderAddress, orderPhoneNumber, orderQuantity, upiTransactionId, productName } = req.body;
-        const paymentImage = req.file ? req.file.path : null;
+// app.post('/addorder', upload.single('paymentImage'), async (req, res) => {
+//     try {
+//         const { orderName, orderAddress, orderPhoneNumber, orderQuantity, upiTransactionId, productName } = req.body;
+//         const paymentImage = req.file ? req.file.path : null;
 
-        const newOrder = new orderModel({
-            orderName,
-            orderAddress,
-            orderPhoneNumber,
-            orderQuantity,
-            upiTransactionId,
-            paymentImage,
-            productName,
-        });
+//         const newOrder = new orderModel({
+//             orderName,
+//             orderAddress,
+//             orderPhoneNumber,
+//             orderQuantity,
+//             upiTransactionId,
+//             paymentImage,
+//             productName,
+//         });
 
-        await newOrder.save();
-        res.status(201).send('Order placed successfully');
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Error placing order');
-    }
-});
+//         await newOrder.save();
+//         res.status(201).send('Order placed successfully');
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).send('Error placing order');
+//     }
+// });
 
-app.put('/editorder/:id', async (req, res) => {
-    try {
-        const updatedOrder = await orderModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
-        if (!updatedOrder) {
-            return res.status(404).send('Order not found');
-        }
-        res.send('Order updated successfully');
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Error updating order');
-    }
-});
+// app.put('/editorder/:id', async (req, res) => {
+//     try {
+//         const updatedOrder = await orderModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
+//         if (!updatedOrder) {
+//             return res.status(404).send('Order not found');
+//         }
+//         res.send('Order updated successfully');
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).send('Error updating order');
+//     }
+// });
 
-app.delete('/deleteorder/:id', async (req, res) => {
-    try {
-        const deletedOrder = await orderModel.findByIdAndDelete(req.params.id);
-        if (!deletedOrder) {
-            return res.status(404).send('Order not found');
-        }
-        res.send('Order deleted successfully');
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Error deleting order');
-    }
-});
+// app.delete('/deleteorder/:id', async (req, res) => {
+//     try {
+//         const deletedOrder = await orderModel.findByIdAndDelete(req.params.id);
+//         if (!deletedOrder) {
+//             return res.status(404).send('Order not found');
+//         }
+//         res.send('Order deleted successfully');
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).send('Error deleting order');
+//     }
+// });
 
-// ** Product Routes **
-app.get('/getproducts', async (req, res) => {
-    try {
-        const products = await productModel.find();
-        res.status(200).json(products);
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Error fetching products');
-    }
-});
+// // ** Product Routes **
+// app.get('/getproducts', async (req, res) => {
+//     try {
+//         const products = await productModel.find();
+//         res.status(200).json(products);
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).send('Error fetching products');
+//     }
+// });
 
-app.post('/addproduct', upload.single('productImage'), async (req, res) => {
-    try {
-        const { productName, productPrice, productDescription, productQuantity } = req.body;
-        const productImage = req.file ? req.file.path : null;
+// app.post('/addproduct', upload.single('productImage'), async (req, res) => {
+//     try {
+//         const { productName, productPrice, productDescription, productQuantity } = req.body;
+//         const productImage = req.file ? req.file.path : null;
 
-        const newProduct = new productModel({
-            productName,
-            productPrice,
-            productDescription,
-            productQuantity,
-            productImage,
-        });
+//         const newProduct = new productModel({
+//             productName,
+//             productPrice,
+//             productDescription,
+//             productQuantity,
+//             productImage,
+//         });
 
-        await newProduct.save();
-        res.status(201).send('Product added successfully');
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Error adding product');
-    }
-});
+//         await newProduct.save();
+//         res.status(201).send('Product added successfully');
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).send('Error adding product');
+//     }
+// });
 
-app.put('/editproduct/:id', upload.single('productImage'), async (req, res) => {
-    try {
-        const { productName, productPrice, productDescription, productQuantity } = req.body;
-        const productImage = req.file ? req.file.path : req.body.productImage;
+// app.put('/editproduct/:id', upload.single('productImage'), async (req, res) => {
+//     try {
+//         const { productName, productPrice, productDescription, productQuantity } = req.body;
+//         const productImage = req.file ? req.file.path : req.body.productImage;
 
-        const updatedProduct = await productModel.findByIdAndUpdate(
-            req.params.id,
-            { productName, productPrice, productDescription, productQuantity, productImage },
-            { new: true }
-        );
+//         const updatedProduct = await productModel.findByIdAndUpdate(
+//             req.params.id,
+//             { productName, productPrice, productDescription, productQuantity, productImage },
+//             { new: true }
+//         );
 
-        if (!updatedProduct) {
-            return res.status(404).send('Product not found');
-        }
-        res.send('Product updated successfully');
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Error updating product');
-    }
-});
+//         if (!updatedProduct) {
+//             return res.status(404).send('Product not found');
+//         }
+//         res.send('Product updated successfully');
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).send('Error updating product');
+//     }
+// });
 
-app.delete('/deleteproduct/:id', async (req, res) => {
-    try {
-        const deletedProduct = await productModel.findByIdAndDelete(req.params.id);
-        if (!deletedProduct) {
-            return res.status(404).send('Product not found');
-        }
-        res.send('Product deleted successfully');
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Error deleting product');
-    }
-});
+// app.delete('/deleteproduct/:id', async (req, res) => {
+//     try {
+//         const deletedProduct = await productModel.findByIdAndDelete(req.params.id);
+//         if (!deletedProduct) {
+//             return res.status(404).send('Product not found');
+//         }
+//         res.send('Product deleted successfully');
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).send('Error deleting product');
+//     }
+// });
 
-// Start the server
-app.listen(PORT, () => {
-    console.log(`Server is running on PORT ${PORT}`);
-});
+// // Start the server
+// app.listen(PORT, () => {
+//     console.log(`Server is running on PORT ${PORT}`);
+// });
