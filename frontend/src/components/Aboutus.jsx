@@ -292,7 +292,7 @@ const AboutUs = () => {
                fontFamily: '"Arial", "Helvetica", "sans-serif"' 
              }} */}
            sx={{ backgroundColor: '#FFFDD0', color: '#5B3A29', '&:hover': { backgroundColor: '#f5e3a1' } }} // Cream color with hover effect
-            size="large"
+          
            >
              <Link 
                to={'/admin'} 
