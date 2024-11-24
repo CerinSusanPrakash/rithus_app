@@ -273,7 +273,7 @@ const AboutUs = () => {
                   fontWeight: "bold",
                 }}
               >
-                About
+                Login
               </Link>
             </Button>
           </Paper>
