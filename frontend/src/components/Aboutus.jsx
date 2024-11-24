@@ -247,6 +247,7 @@ const AboutUs = () => {
           <Paper
             elevation={4}
             style={{
+              backgroundImage: "url(https://wallpapercave.com/wp/wp5859378.jpg)"
               padding: "20px",
               borderRadius: "8px",
               backgroundColor: "#f9f9f9",
