@@ -255,7 +255,7 @@ const AboutUs = () => {
             }}
           >
             <Typography variant="h4" gutterBottom>
-              Login (Admin)
+              Login (Admin Only)
             </Typography>
             <Button
               sx={{
