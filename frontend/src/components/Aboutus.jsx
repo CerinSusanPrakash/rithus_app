@@ -271,44 +271,44 @@ const AboutUs = () => {
         </Grid>
       </Grid> */}
 
-    //   <Grid container spacing={4} alignItems="center" style={{ marginTop: '50px', textAlign: 'center' }}>
-    //   <Grid item xs={12}>
-    //     <Paper
-    //       elevation={4} // Elevation adds shadow
-    //       style={{
-    //         padding: '20px',
-    //         boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)', // Optional: Custom shadow
-    //         borderRadius: '8px',
-    //         backgroundColor: '#f9f9f9', // Light background for contrast
-    //       }}
-    //     >
-    //       <Typography variant="h4" gutterBottom>
-    //         Login (Admin)
-    //       </Typography>
-    //       <Button 
-    //         sx={{ 
-    //           color: '#5B3A29', 
-    //           fontWeight: 'bold', 
-    //           fontFamily: '"Arial", "Helvetica", "sans-serif"' 
-    //         }}
-    //       >
-    //         <Link 
-    //           to={'/admin'} 
-    //           style={{ 
-    //             textDecoration: "none", 
-    //             color: '#5B3A29', 
-    //             fontWeight: 'bold', 
-    //             fontFamily: '"Arial", "Helvetica", "sans-serif"' 
-    //           }}
-    //         >
-    //           About
-    //         </Link>
-    //       </Button>
-    //     </Paper>
-    //   </Grid>
-    // </Grid>
+       <Grid container spacing={4} alignItems="center" style={{ marginTop: '50px', textAlign: 'center' }}>
+       <Grid item xs={12}>
+         <Paper
+           elevation={4} // Elevation adds shadow
+           style={{
+             padding: '20px',
+             boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)', // Optional: Custom shadow
+             borderRadius: '8px',
+             backgroundColor: '#f9f9f9', // Light background for contrast
+           }}
+         >
+           <Typography variant="h4" gutterBottom>
+             Login (Admin)
+           </Typography>
+           <Button 
+             sx={{ 
+               color: '#5B3A29', 
+               fontWeight: 'bold', 
+               fontFamily: '"Arial", "Helvetica", "sans-serif"' 
+             }}
+           >
+             <Link 
+               to={'/admin'} 
+               style={{ 
+                 textDecoration: "none", 
+                 color: '#5B3A29', 
+                 fontWeight: 'bold', 
+                 fontFamily: '"Arial", "Helvetica", "sans-serif"' 
+               }}
+             >
+               About
+             </Link>
+           </Button>
+         </Paper>
+       </Grid>
+     </Grid>
 
-             <Grid container spacing={4} alignItems="center" style={{ marginTop: '50px', textAlign: 'center' }}>
+{/*              <Grid container spacing={4} alignItems="center" style={{ marginTop: '50px', textAlign: 'center' }}>
       <Grid item xs={12}>
         <Paper
           elevation={4} // Elevation adds shadow
@@ -346,7 +346,7 @@ const AboutUs = () => {
           </Button>
         </Paper>
       </Grid>
-    </Grid>
+    </Grid> */}
 
   
 {/* //new */}
