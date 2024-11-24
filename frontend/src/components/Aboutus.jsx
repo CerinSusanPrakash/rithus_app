@@ -242,6 +242,16 @@ const AboutUs = () => {
               color: 'black'                  // Optional: Make text white for better contrast
             }}
           >
+//new
+      <Grid container spacing={4} alignItems="center" style={{ marginTop: '50px', textAlign: 'center' }}>
+        <Grid item xs={12}>
+          <Typography variant="h4" gutterBottom>Login (Admin)</Typography>
+          
+
+        </Grid>
+      </Grid>
+//new
+            
             <CardContent>
               <Typography variant="h5" gutterBottom>
                 {value.title}
