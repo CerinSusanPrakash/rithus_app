@@ -286,12 +286,13 @@ const AboutUs = () => {
              Login (Admin)
            </Typography>
            <Button 
-{/*              sx={{ 
+             sx={{ 
+               backgroundColor: '#FFFDD0',
                color: '#5B3A29', 
                fontWeight: 'bold', 
                fontFamily: '"Arial", "Helvetica", "sans-serif"' 
-             }} */}
-           sx={{ backgroundColor: '#FFFDD0', color: '#5B3A29', '&:hover': { backgroundColor: '#f5e3a1' } }} // Cream color with hover effect
+             }}
+{/*            sx={{ backgroundColor: '#FFFDD0', color: '#5B3A29', '&:hover': { backgroundColor: '#f5e3a1' } }} // Cream color with hover effect */}
           
            >
              <Link 
