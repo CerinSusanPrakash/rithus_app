@@ -134,7 +134,7 @@
 
 // export default Aboutus
 import React from "react";
-import { Container, Typography, Grid, Button, Card, CardContent, Avatar } from "@mui/material";
+import { Container, Typography, Grid, Button, Card, CardContent, Avatar,Paper } from "@mui/material";
 import { Email, Facebook, Instagram, Twitter } from '@mui/icons-material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { Link } from 'react-router-dom';
@@ -259,7 +259,7 @@ const AboutUs = () => {
 
 
 {/*     //new */}
-      <Grid container spacing={4} alignItems="center" style={{ marginTop: '50px', textAlign: 'center' }}>
+{/*       <Grid container spacing={4} alignItems="center" style={{ marginTop: '50px', textAlign: 'center' }}>
         <Grid item xs={12}>
           <Typography variant="h4" gutterBottom>Login (Admin)</Typography>
           <Button sx={{ color: '#5B3A29', fontWeight: 'bold', fontFamily: '"Arial", "Helvetica", "sans-serif"' }}>
@@ -269,7 +269,46 @@ const AboutUs = () => {
           </Button>
 
         </Grid>
+      </Grid> */}
+
+      <Grid container spacing={4} alignItems="center" style={{ marginTop: '50px', textAlign: 'center' }}>
+      <Grid item xs={12}>
+        <Paper
+          elevation={4} // Elevation adds shadow
+          style={{
+            padding: '20px',
+            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)', // Optional: Custom shadow
+            borderRadius: '8px',
+            backgroundColor: '#f9f9f9', // Light background for contrast
+          }}
+        >
+          <Typography variant="h4" gutterBottom>
+            Login (Admin)
+          </Typography>
+          <Button 
+            sx={{ 
+              color: '#5B3A29', 
+              fontWeight: 'bold', 
+              fontFamily: '"Arial", "Helvetica", "sans-serif"' 
+            }}
+          >
+            <Link 
+              to={'/admin'} 
+              style={{ 
+                textDecoration: "none", 
+                color: '#5B3A29', 
+                fontWeight: 'bold', 
+                fontFamily: '"Arial", "Helvetica", "sans-serif"' 
+              }}
+            >
+              About
+            </Link>
+          </Button>
+        </Paper>
       </Grid>
+    </Grid>
+
+  
 {/* //new */}
       {/* Team Section */}
       {/* <Grid container spacing={4} style={{ marginTop: '50px' }}>
