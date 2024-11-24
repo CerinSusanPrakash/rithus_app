@@ -247,7 +247,7 @@ const AboutUs = () => {
           <Paper
             elevation={4}
             style={{
-              backgroundImage: "url(https://wallpapercave.com/wp/wp5859378.jpg)",
+              backgroundImage: "url(https://favim.com/pd/p/orig/2018/09/20/instagram-gold-sunset-Favim.com-6330328.jpg)",
               padding: "20px",
               borderRadius: "8px",
               backgroundColor: "#f9f9f9",
