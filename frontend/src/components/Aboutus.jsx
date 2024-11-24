@@ -231,7 +231,7 @@ const AboutUs = () => {
         { 
           title: "Innovation", 
           description: "Continuously improving and innovating to serve you better.",
-          bgImage: "url('https://cdn.wallpapersafari.com/55/76/r80zjJ.png')" // Add your image URL here
+          bgImage: "url('https://wallpaperaccess.com/full/1353541.jpg')" // Add your image URL here
         }
       ].map((value, index) => (
         <Grid item xs={12} md={3} key={index}>
