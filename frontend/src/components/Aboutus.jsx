@@ -159,29 +159,6 @@ const AboutUs = () => {
 
 
      
-
-      {/* Values Section */}
-      {/* <Grid container spacing={4} style={{ marginTop: '50px' }}>
-        <Grid item xs={12}>
-          <Typography variant="h4" align="center" gutterBottom>What We Stand For</Typography>
-        </Grid>
-        {[
-          { title: "Quality First", description: "We prioritize quality in every product we offer." },
-          { title: "Customer-Centric", description: "Your satisfaction drives everything we do." },
-          { title: "Sustainability", description: "We believe in eco-friendly and sustainable practices." },
-          { title: "", description: "Continuously improving and innovating to serve you better." }
-        ].map((value, index) => (
-          <Grid item xs={12} md={3} key={index}>
-            <Card>
-              <CardContent>
-                <Typography variant="h5" gutterBottom>{value.title}</Typography>
-                <Typography variant="body2">{value.description}</Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid> */}
-      {/* Call to Action */}
       <Grid container spacing={4} alignItems="center" style={{ marginTop: '50px', textAlign: 'center' }}>
         <Grid item xs={12}>
           <Typography variant="h4" gutterBottom>Join Us on Our Journey</Typography>
@@ -258,49 +235,6 @@ const AboutUs = () => {
     </Grid>
 
 
-{/* new */}
-      {/* Team Section */}
-      {/* <Grid container spacing={4} style={{ marginTop: '50px' }}>
-        <Grid item xs={12} >
-          <Typography variant="h4" align="center" gutterBottom>Meet the Team</Typography>
-        </Grid>
-        {[
-          { name: "", role: "Founder & CEO", img: "/path/to/team1.jpg" },
-          { name: "", role: "COO", img: "/path/to/team2.jpg" },
-          { name: "Emily Johnson", role: "Marketing Head", img: "/path/to/team3.jpg" }
-        ].map((member, index) => (
-          <Grid item xs={12} md={4} key={index}>
-            <Card>
-              <CardContent style={{ textAlign: 'center' }}>
-                <Avatar src={member.img} alt={member.name} style={{ width: 100, height: 100, margin: '0 auto' }} />
-                <Typography variant="h6" style={{ marginTop: '10px' }}>{member.name}</Typography>
-                <Typography variant="body2" color="textSecondary">{member.role}</Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid> */}
-
-      {/* Testimonials Section */}
-      {/* <Grid container spacing={4} style={{ marginTop: '50px' }}>
-        <Grid item xs={12}>
-          <Typography variant="h4" align="center" gutterBottom>What Our Customers Say</Typography>
-        </Grid>
-        {[
-          { text: "Amazing products and fantastic customer service!", customer: "Alex T." },
-          { text: "I've never been happier with an online shopping experience.", customer: "Jessica P." },
-          { text: "High-quality items and fast delivery. Highly recommend!", customer: "Michael W." }
-        ].map((testimonial, index) => (
-          <Grid item xs={12} md={4} key={index}>
-            <Card>
-              <CardContent>
-                <Typography variant="body1" gutterBottom>"{testimonial.text}"</Typography>
-                <Typography variant="body2" color="textSecondary">- {testimonial.customer}</Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid> */}
 
       
     </Container>
