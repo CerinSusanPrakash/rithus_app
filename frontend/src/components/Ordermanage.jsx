@@ -18,7 +18,7 @@ const Ordermanage = () => {
   // Fetch orders on component mount
   useEffect(() => {
     axios
-      .get('http://localhost:4000/getorders')
+      .get('https://rithus-app-backend-r.onrender.com/getorders')
       .then((res) => {
         console.log(res);
         setData(res.data);
@@ -31,7 +31,7 @@ const Ordermanage = () => {
   // Delete an order
   function del_Value(orderId) {
     axios
-      .delete(`http://localhost:4000/deleteorder/${orderId}`)
+      .delete(`https://rithus-app-backend-r.onrender.com/deleteorder/${orderId}`)
       .then(() => {
         alert('Order Deleted');
         setData(data.filter((order) => order._id !== orderId)); // Update state without reloading
@@ -97,7 +97,7 @@ const Ordermanage = () => {
                 <TableCell align="right">
                   {row.paymentImage ? (
                     <img
-                      src={`http://localhost:4000/${row.paymentImage}`}
+                      src={`https://rithus-app-backend-r.onrender.com/${row.paymentImage}`}
                       alt="Payment"
                       style={{
                         width: '100px',
@@ -106,7 +106,7 @@ const Ordermanage = () => {
                         borderRadius: '5px',
                       }}
                       onClick={() =>
-                        handleImageClick(`http://localhost:4000/${row.paymentImage}`)
+                        handleImageClick(`https://rithus-app-backend-r.onrender.com/${row.paymentImage}`)
                       }
                     />
                   ) : (
