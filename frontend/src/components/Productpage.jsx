@@ -245,6 +245,7 @@ const ProductPage = () => {
               </Typography>
               <input
                 type="file"
+                label="image"
                 accept="image/*"
                 onChange={handleFileChange}
                 style={{ marginBottom: '1rem' }}
