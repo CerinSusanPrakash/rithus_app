@@ -49,7 +49,7 @@ const Adminhome = () => {
 
   // Function to fetch products
   const fetchProducts = () => {
-    axios.get('https://rithus-app-backend.vercel.app/getproducts')
+    axios.get('https://rithus-app-backend-r.onrender.com/getproducts')
       .then((res) => {
         setProducts(res.data);
       })
@@ -162,7 +162,7 @@ const Adminhome = () => {
 
     if (editMode) {
         // Update existing product
-        axios.put(`https://rithus-app-backend.vercel.app/editproduct/${editingProductId}`, formData, {
+        axios.put(`https://rithus-app-backend-r.onrender.com/editproduct/${editingProductId}`, formData, {
             headers: { 'Content-Type': 'multipart/form-data' }
         })
             .then((res) => {
@@ -177,7 +177,7 @@ const Adminhome = () => {
             });
     } else {
         // Add new product
-        axios.post('https://rithus-app-backend.vercel.app/addproduct', formData, {
+        axios.post('https://rithus-app-backend-r.onrender.com/addproduct', formData, {
             headers: { 'Content-Type': 'multipart/form-data' }
         })
             .then((res) => {
@@ -196,7 +196,7 @@ const Adminhome = () => {
 
   // Function to delete a product
   const handleDelete = (id) => {
-    axios.delete('https://rithus-app-backend.vercel.app/deleteproduct/' + id)
+    axios.delete('https://rithus-app-backend-r.onrender.com/deleteproduct/' + id)
       .then((res) => {
         alert('Product Deleted');
         fetchProducts(); // Refresh product list
@@ -393,7 +393,7 @@ const Adminhome = () => {
               <Card>
               <CardMedia
   sx={{ height: 200 }}
-  image={`https://rithus-app-backend.vercel.app/${product.productImage}`} // Dynamically set the image URL
+  image={`https://rithus-app-backend-r.onrender.com/${product.productImage}`} // Dynamically set the image URL
   title={product.productName || "Product Image"}
   component="img" // Use CardMedia as an img component for better fallback support
   alt={product.productName || "Product Image"}
