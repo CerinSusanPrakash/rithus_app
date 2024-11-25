@@ -184,7 +184,8 @@ app.use(express.json());
 app.use(cors({
     origin: ["https://rithusnightyworldofficial.vercel.app",
              "https://rithusnightyworldofficial.vercel.app/products",
-             "https://rithusnightyworldofficial.vercel.app/buyproduct"], // Add all allowed origins
+             "https://rithusnightyworldofficial.vercel.app/buyproduct",
+            "https://rithusnightyworldofficial.vercel.app/adminhome"], // Add all allowed origins
     methods: ["GET", "DELETE", "POST", "PUT"],
     credentials: true,
 }));
