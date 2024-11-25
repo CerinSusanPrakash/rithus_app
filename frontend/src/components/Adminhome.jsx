@@ -21,6 +21,7 @@ import Ordermanage from './Ordermanage';
 // <DashboardIcon sx={{ marginRight: '8px', color: '#5B3A29' }} />
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import { Link } from 'react-router-dom';
+import LogoutIcon from '@mui/icons-material/Logout'; 
 // Add icon inside Toolbar
 <DashboardIcon sx={{ marginRight: '8px', color: '#5B3A29' }} />
 
