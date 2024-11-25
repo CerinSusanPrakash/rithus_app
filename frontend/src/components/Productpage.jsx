@@ -130,7 +130,9 @@ const ProductPage = () => {
   }
 
   axios
-    .post('https://rithus-app-backend.vercel.app/addorder', formData, {
+    // .post('https://rithus-app-backend.vercel.app/addorder', formData, {
+          .post('https://rithus-app-backend-r.onrender.com/addorder', formData, {
+      
       // headers: { 'Content-Type': 'multipart/form-data' },
       headers: { 'Content-Type': '/uploads' },
     })
@@ -150,7 +152,7 @@ const ProductPage = () => {
         <Grid item xs={12} md={6} container justifyContent="center" alignItems="center">
           <Box
             component="img"
-            src={`https://rithus-app-backend.vercel.app/${product?.productImage}` || 'https://via.placeholder.com/400'}
+            src={`https://rithus-app-backend-r.onrender.com/${product?.productImage}` || 'https://via.placeholder.com/400'}
             alt="Product Image"
             sx={{ width: '100%', borderRadius: '10px' }}
           />
