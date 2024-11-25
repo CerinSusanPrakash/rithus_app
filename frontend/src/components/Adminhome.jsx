@@ -393,7 +393,7 @@ const Adminhome = () => {
               <Card>
               <CardMedia
   sx={{ height: 200 }}
-  image={`https://rithusnightyworldofficial.vercel.app/${product.productImage}`} // Dynamically set the image URL
+  image={`https://rithus-app-backend.vercel.app/${product.productImage}`} // Dynamically set the image URL
   title={product.productName || "Product Image"}
   component="img" // Use CardMedia as an img component for better fallback support
   alt={product.productName || "Product Image"}
