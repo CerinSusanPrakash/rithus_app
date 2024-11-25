@@ -263,6 +263,7 @@ const Adminhome = () => {
   >
     Admin Dashboard
   </Typography>
+  <Link to={'/admin'}><LogoutIcon sx={{ marginRight: '8px', color: '#5B3A29' }} /></Link>
 </Toolbar>
 
       
