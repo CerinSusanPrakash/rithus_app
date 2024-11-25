@@ -73,7 +73,7 @@ const Viewprod = () => {
                 /> */}
                 <CardMedia
   sx={{ height: 200 }}
-{/*   image={`https://rithus-app-backend.vercel.app/${item.productImage}`}// Dynamically set the image URL */}
+{/*    image={`https://rithus-app-backend.vercel.app/${item.productImage}`}  Dynamically set the image URL  */}
 image={`https://rithus-app-backend-r.onrender.com/${item.productImage}`}
                   
   title={item.productName || "Product Image"}
