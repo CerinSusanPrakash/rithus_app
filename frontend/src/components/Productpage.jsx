@@ -131,7 +131,8 @@ const ProductPage = () => {
 
   axios
     .post('https://rithus-app-backend.vercel.app/addorder', formData, {
-      headers: { 'Content-Type': 'multipart/form-data' },
+      // headers: { 'Content-Type': 'multipart/form-data' },
+      headers: { 'Content-Type': '/uploads' },
     })
     .then((res) => {
       alert('Order Placed Successfully');
