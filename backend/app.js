@@ -282,26 +282,52 @@ app.get('/getproducts', async (req, res) => {
   }
 });
 
+// app.post('/addproduct', upload.single('productImage'), async (req, res) => {
+//   try {
+//     const { productName, productPrice, productDescription, productQuantity } = req.body;
+//     const productImage = req.file ? req.file.path : null; // Get image path
+
+//     const newProduct = new productModel({
+//       productName,
+//       productPrice,
+//       productDescription,
+//       productQuantity,
+//       productImage, // Store image path
+//     });
+
+//     await newProduct.save();
+//     res.status(201).send('Product added successfully');
+//   } catch (error) {
+//     console.log(error);
+//     res.status(500).send('Error adding product');
+//   }
+// });
+
 app.post('/addproduct', upload.single('productImage'), async (req, res) => {
   try {
     const { productName, productPrice, productDescription, productQuantity } = req.body;
-    const productImage = req.file ? req.file.path : null; // Get image path
+    if (!req.file) {
+      return res.status(400).send('Product image is required.');
+    }
+    const productImage = req.file.path; // Ensure file path is captured
 
     const newProduct = new productModel({
       productName,
       productPrice,
       productDescription,
       productQuantity,
-      productImage, // Store image path
+      productImage,
     });
 
     await newProduct.save();
     res.status(201).send('Product added successfully');
   } catch (error) {
-    console.log(error);
+    console.error('Error adding product:', error.message);
     res.status(500).send('Error adding product');
   }
 });
+
+
 
 app.put('/editproduct/:id', upload.single('productImage'), async (req, res) => {
   try {
