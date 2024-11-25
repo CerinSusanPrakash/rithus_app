@@ -143,10 +143,10 @@ const Adminhome = () => {
     console.log('Form Data:', form); // Add this line for debugging
 
     // Check if any field is empty
-    if (!productName || !productPrice || !productDescription || !productQuantity || !productImage) {
-        alert('Please fill in all the fields before submitting.');
-        return; // Stop the function if any field is empty
-    }
+    // if (!productName || !productPrice || !productDescription || !productQuantity || !productImage) {
+    //     alert('Please fill in all the fields before submitting.');
+    //     return; // Stop the function if any field is empty
+    // }
 
     // Prepare form data for file upload
     const formData = new FormData();
