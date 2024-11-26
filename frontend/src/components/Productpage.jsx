@@ -50,100 +50,100 @@ const ProductPage = () => {
     }
   }
 
-  // function valueAdd(e) {
-  //   e.preventDefault();
-
-  //   const { orderName, orderAddress, orderPhoneNumber, orderQuantity, upiTransactionId } = form;
-
-  //   if (!orderName || !orderAddress || !orderPhoneNumber || !orderQuantity || !upiTransactionId) {
-  //     alert('Please fill out all fields before placing the order.');
-  //     return;
-  //   }
-
-  //   if (orderPhoneNumber.length !== 10) {
-  //     alert('Phone number must be exactly 10 digits.');
-  //     return;
-  //   }
-
-  //   if (!file) {
-  //     setFileError('Please upload a payment screenshot.');
-  //     return;
-  //   }
-
-  //   const formData = new FormData();
-  //   formData.append('orderName', orderName);
-  //   formData.append('orderAddress', orderAddress);
-  //   formData.append('orderPhoneNumber', orderPhoneNumber);
-  //   formData.append('orderQuantity', orderQuantity);
-  //   formData.append('upiTransactionId', upiTransactionId);
-  //   formData.append('paymentImage', file);
-  //   formData.append('productName', product?.productName); // Adding product name to the formData
-
-  //   // Optionally, you can also pass product ID or other product details if necessary
-  //   formData.append('productId', product?._id);
-
-  //   axios
-  //     .post('https://rithus-app-backend.vercel.app/addorder', formData, {
-  //       headers: { 'Content-Type': 'https://rithus-app-backend.vercel.app/multipart/form-data' },
-  //     })
-  //     .then((res) => {
-  //       alert('Order Placed Successfully');
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //       alert('Error placing the order.');
-  //     });
-  // }
-
   function valueAdd(e) {
-  e.preventDefault();
+    e.preventDefault();
 
-  const { orderName, orderAddress, orderPhoneNumber, orderQuantity, upiTransactionId } = form;
+    const { orderName, orderAddress, orderPhoneNumber, orderQuantity, upiTransactionId } = form;
 
-  if (!orderName || !orderAddress || !orderPhoneNumber || !orderQuantity || !upiTransactionId) {
-    alert('Please fill out all fields before placing the order.');
-    return;
+    if (!orderName || !orderAddress || !orderPhoneNumber || !orderQuantity || !upiTransactionId) {
+      alert('Please fill out all fields before placing the order.');
+      return;
+    }
+
+    if (orderPhoneNumber.length !== 10) {
+      alert('Phone number must be exactly 10 digits.');
+      return;
+    }
+
+    if (!file) {
+      setFileError('Please upload a payment screenshot.');
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('orderName', orderName);
+    formData.append('orderAddress', orderAddress);
+    formData.append('orderPhoneNumber', orderPhoneNumber);
+    formData.append('orderQuantity', orderQuantity);
+    formData.append('upiTransactionId', upiTransactionId);
+    formData.append('paymentImage', file);
+    formData.append('productName', product?.productName); // Adding product name to the formData
+
+    // Optionally, you can also pass product ID or other product details if necessary
+    formData.append('productId', product?._id);
+
+    axios
+      .post('https://rithus-app-backend.vercel.app/addorder', formData, {
+        headers: { 'Content-Type': 'https://rithus-app-backend.vercel.app/multipart/form-data' },
+      })
+      .then((res) => {
+        alert('Order Placed Successfully');
+      })
+      .catch((err) => {
+        console.error(err);
+        alert('Error placing the order.');
+      });
   }
 
-  if (orderPhoneNumber.length !== 10) {
-    alert('Phone number must be exactly 10 digits.');
-    return;
-  }
+//   function valueAdd(e) {
+//   e.preventDefault();
 
-  if (!file) {
-    setFileError('Please upload a payment screenshot.');
-    return;
-  }
+//   const { orderName, orderAddress, orderPhoneNumber, orderQuantity, upiTransactionId } = form;
 
-  const formData = new FormData();
-  formData.append('orderName', orderName);
-  formData.append('orderAddress', orderAddress);
-  formData.append('orderPhoneNumber', orderPhoneNumber);
-  formData.append('orderQuantity', orderQuantity);
-  formData.append('upiTransactionId', upiTransactionId);
-  formData.append('paymentImage', file);
+//   if (!orderName || !orderAddress || !orderPhoneNumber || !orderQuantity || !upiTransactionId) {
+//     alert('Please fill out all fields before placing the order.');
+//     return;
+//   }
 
-  // Add product details
-  if (product) {
-    formData.append('productName', product.productName);
-    formData.append('productId', product._id);
-  }
+//   if (orderPhoneNumber.length !== 10) {
+//     alert('Phone number must be exactly 10 digits.');
+//     return;
+//   }
 
-  axios
-    // .post('https://rithus-app-backend.vercel.app/addorder', formData, {
-          .post('https://rithus-app-backend-r.onrender.com/addorder', formData, {
+//   if (!file) {
+//     setFileError('Please upload a payment screenshot.');
+//     return;
+//   }
+
+//   const formData = new FormData();
+//   formData.append('orderName', orderName);
+//   formData.append('orderAddress', orderAddress);
+//   formData.append('orderPhoneNumber', orderPhoneNumber);
+//   formData.append('orderQuantity', orderQuantity);
+//   formData.append('upiTransactionId', upiTransactionId);
+//   formData.append('paymentImage', file);
+
+//   // Add product details
+//   if (product) {
+//     formData.append('productName', product.productName);
+//     formData.append('productId', product._id);
+//   }
+
+//   axios
+//     // .post('https://rithus-app-backend.vercel.app/addorder', formData, {
+//           .post('https://rithus-app-backend-r.onrender.com/addorder', formData, {
       
-      // headers: { 'Content-Type': 'multipart/form-data' },
-      headers: { 'Content-Type': '/uploads' },
-    })
-    .then((res) => {
-      alert('Order Placed Successfully');
-    })
-    .catch((err) => {
-      console.error('Error placing order:', err.message);
-      alert('Error placing the order.');
-    });
-}
+//       // headers: { 'Content-Type': 'multipart/form-data' },
+//       headers: { 'Content-Type': '/uploads' },
+//     })
+//     .then((res) => {
+//       alert('Order Placed Successfully');
+//     })
+//     .catch((err) => {
+//       console.error('Error placing order:', err.message);
+//       alert('Error placing the order.');
+//     });
+// }
 
 
   return (
