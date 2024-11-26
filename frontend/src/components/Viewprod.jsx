@@ -76,7 +76,7 @@ const Viewprod = () => {
                 <CardMedia
   sx={{ height: 200 }}
 
-image={`https://rithus-app-backend-r.onrender.com/${item.productImage}`}
+image={`https://rithus-app-backend-noimg.vercel.app/${item.productImage}`}
                   
   title={item.productName || "Product Image"}
   component="img" // Use CardMedia as an img component for better fallback support
