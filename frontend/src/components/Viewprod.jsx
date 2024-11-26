@@ -9,7 +9,7 @@ const Viewprod = () => {
 
   useEffect(() => {
     // axios.get('https://rithus-app-backend.vercel.app/getproducts')
-    axios.get('https://rithus-app-backend-r.onrender.com/getproducts')
+    axios.get('https://rithus-app-backend-noimg.vercel.app/getproducts')
     // axios.get('https://rithus-app-backend-noimg.vercel.app/getproducts')
       
       .then((res) => {
