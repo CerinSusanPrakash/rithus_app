@@ -9,8 +9,8 @@ const Viewprod = () => {
 
   useEffect(() => {
     // axios.get('https://rithus-app-backend.vercel.app/getproducts')
-    // axios.get('https://rithus-app-backend-r.onrender.com/getproducts')
-    axios.get('https://rithus-app-backend-noimg.vercel.app/getproducts')
+    axios.get('https://rithus-app-backend-r.onrender.com/getproducts')
+    // axios.get('https://rithus-app-backend-noimg.vercel.app/getproducts')
       
       .then((res) => {
         console.log(res);
@@ -76,7 +76,7 @@ const Viewprod = () => {
                 <CardMedia
   sx={{ height: 200 }}
 
-image={`https://rithus-app-backend-noimg.vercel.app/${item.productImage}`}
+image={`https://rithus-app-backend-r.onrender.com/${item.productImage}`}
                   
   title={item.productName || "Product Image"}
   component="img" // Use CardMedia as an img component for better fallback support
